@@ -1,0 +1,4 @@
+AuthUserFile /var/www/WebDiP/2018_projekti/WebDiP2018x149/privatno/.htpasswd
+AuthType Basic
+AuthName "Privatno"
+Require valid-user
