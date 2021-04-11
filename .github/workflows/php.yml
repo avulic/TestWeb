@@ -17,7 +17,7 @@ jobs:
         refs: ${{ github.ref }}
         
     - name: Create local changes
-      run: echo hiii > test.txt
+      run: echo uffzhukhiii > test.txt | echo "fdfdsfd"
     - name: Commit files
       run: |
         git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
