@@ -16,7 +16,7 @@ jobs:
         fetch-depth: 0 # otherwise, you will failed to push refs to dest repo
         
     - name: Create local changes
-      run: echo aoiooo > test.txt | echo "fdfdsfd"
+      run: echo aoiočlkjpokjooo > test.txt | echo "fdfdsfd"
       
     - name: Commit files
       run: |
@@ -37,8 +37,8 @@ jobs:
       env:
         # Make sure you have that / at the end. We use rsync 
         # WIKI_DIR's default is wiki/
-        WIKI_DIR: './doc/'
-        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        WIKI_DIR: ./doc/
+        GH_TOKEN: ${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}
         GH_MAIL: antevulic96@gmail.com
         GH_NAME: ${{ github.repository_owner }}
 
