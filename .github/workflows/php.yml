@@ -16,7 +16,7 @@ jobs:
         fetch-depth: 0 # otherwise, you will failed to push refs to dest repo
         
     - name: Create local changes
-      run: echo adsdsdasdasdasd > test.txt | echo "fdfdsfd"
+      run: echo adsdsdasdarewrersdasd > test.txt | echo "fdfdsfd"
       
     - name: Commit files
       run: |
@@ -38,7 +38,7 @@ jobs:
         # Make sure you have that / at the end. We use rsync 
         # WIKI_DIR's default is wiki/
         WIKI_DIR: './doc/'
-        GH_TOKEN: ${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         GH_MAIL: ${{ secrets.YOUR_EMAIL }}
         GH_NAME: ${{ github.repository_owner }}
         #EXCLUDED_FILES: "a/ b.md"
