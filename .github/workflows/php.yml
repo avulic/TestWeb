@@ -16,13 +16,13 @@ jobs:
         fetch-depth: 0 # otherwise, you will failed to push refs to dest repo
         
     - name: Create local changes
-      run: echo adsdsd > test.txt | echo "fdfdsfd"
+      run: echo adsdsdasdasdasd > test.txt | echo "fdfdsfd"
       
     - name: Commit files
       run: |
         git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
         git config --local user.name "github-actions[bot]"
-        git add .
+        git add refman.pdf
         git commit -m "[AUTOMATIC COMMIT] Add pdf doc" -a
       #working-directory: ./akdb/doc
       
@@ -31,3 +31,14 @@ jobs:
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         branch: main
+    
+    - name: Push Wiki Changes
+      uses: Andrew-Chen-Wang/github-wiki-action@v2
+      env:
+        # Make sure you have that / at the end. We use rsync 
+        # WIKI_DIR's default is wiki/
+        WIKI_DIR: './doc/'
+        GH_TOKEN: ${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}
+        GH_MAIL: ${{ secrets.YOUR_EMAIL }}
+        GH_NAME: ${{ github.repository_owner }}
+        #EXCLUDED_FILES: "a/ b.md"
